@@ -1,0 +1,6 @@
+language-tool-python
+nltk
+pillow
+psutil
+torch
+transformers
