@@ -1,5 +1,5 @@
 <div align="center">
-<h1> Blip2-Image-Captioning</h1>
+<h1>Image-Captioning</h1>
 </div>
 <div><h2>For Mac (M1, M2, M3) Windows / Linux (CUDA), or CPU</h2> </div>
 <div align="center">
