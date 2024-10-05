@@ -23,9 +23,10 @@ JPG, JPEG, PNG, BMP, GIF
 ### Create a virtual Python environment in the same directory!
 Open the terminal in the directory, e.g. /path/captioning/Blip2-Image-Captioning
 ```
-python3.12 -m venv {name}
-For example: python3.12 -m venv p312
+python3.12 -m venv env
 ```
+For example: python3.12 -m venv p312
+
 ```
 source env/bin/activate
 ```
