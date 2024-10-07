@@ -175,7 +175,7 @@ for filename in os.listdir(image_dir):
                                  top_k=50,
                                  top_p=0.85,
                                  no_repeat_ngram_size=2,
-                                 num_beams=5,
+                                 num_beams=2,
                                  min_length=35,
                                  max_length=80)
 
