@@ -141,7 +141,6 @@ gesamt_zeit = time.time()
 
 #ANCHOR - Modelpfad
 # Modellpfad
-#model_path = '/Volumes/SSD T7/Salesforce-blip2-opt-27b' # Local path
 model_path = "Salesforce/blip2-opt-2.7b" # Huggingface path
 processor = Blip2Processor.from_pretrained(model_path)
 model = Blip2ForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16).to(device)
@@ -170,7 +169,7 @@ for filename in os.listdir(image_dir):
             # Generiere Bildbeschreibung
             out = model.generate(**inputs,
                                  do_sample=True,
-                                 temperature=0.3,
+                                 temperature=0.8,
                                  length_penalty=0.8,
                                  top_k=50,
                                  top_p=0.85,
