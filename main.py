@@ -169,7 +169,7 @@ for filename in os.listdir(image_dir):
             # Generiere Bildbeschreibung
             out = model.generate(**inputs,
                                  do_sample=True,
-                                 temperature=0.8,
+                                 temperature=0.3,
                                  length_penalty=0.8,
                                  top_k=50,
                                  top_p=0.85,
