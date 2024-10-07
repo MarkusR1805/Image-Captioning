@@ -175,8 +175,8 @@ for filename in os.listdir(image_dir):
                                  top_p=0.85,
                                  no_repeat_ngram_size=2,
                                  num_beams=2,
-                                 min_length=35,
-                                 max_length=80)
+                                 min_length=20,
+                                 max_length=50)
 
             caption = processor.decode(out[0], skip_special_tokens=True).strip()
             caption = ' '.join(caption.split())
