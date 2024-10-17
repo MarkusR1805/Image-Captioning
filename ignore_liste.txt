@@ -1,9 +1,12 @@
+-
 - фото
 - фото со всеми други
 /
 //creativecommons.org/licenses/by-nc-sa/2.0/deed.en_us
 14079087
+151589097
 160589843
+7996029
 [
 ]
 america
@@ -15,6 +18,7 @@ armour
 away
 background
 bangs
+barns
 beholder
 berries
 blurry
@@ -32,13 +36,17 @@ caverns
 close
 close-up
 clouds
+concept
+concept stock photo - 151589097 / ivory - 7996029-fotografije
 crows
 daffodils
 decor
 decorations
 der
 desktop
+devices
 dlc
+doors
 download
 dunes
 edge
@@ -48,6 +56,7 @@ ferroviaire
 fishnet
 flames
 forefinger
+fotografije
 fotóblico
 fotóbók
 francisco
@@ -56,6 +65,7 @@ gotham
 gothic
 graves
 ground
+hallowed'en
 halloween
 hats
 haunted
@@ -75,18 +85,24 @@ icne
 ideas
 ilustração
 image
+images
 img
+ipad
 iphone
 items
+ivory
 izbukník
 izbíránská
+iznímají
 javan
 julie
 jumper
 la
 lanterns
+laptop
 le
 left-hand
+legalists
 lemons
 lopez
 los
@@ -96,6 +112,7 @@ make
 mckinney/flickr
 means
 microsoft
+mountains
 n't
 nintendo
 notes
@@ -107,8 +124,10 @@ pillars
 pixabay.com/en/stock-photo/sea-anemones-with-coral-and-other-marine-life-in-the-background-1/
 pockets
 potions
+pots
 pulled
 pumpkins
+reapers
 recoil
 rocks
 roofs
@@ -119,6 +138,7 @@ shit
 sits
 skeletons
 skulls
+smartphone
 something
 souls
 stands
@@ -126,10 +146,12 @@ stars
 states
 steps
 steve
+stock
 stock fotó
 stock fotóbók - 5
 stock photo
 stock photo - фото со всеми други
+stock photobomb
 stockings
 t-shirt
 there
@@ -149,6 +171,7 @@ windows
 wings
 witcher
 witches
+wolves
 word
 words
 words'der
@@ -162,6 +185,7 @@ you
 други
 другим
 изображе
+исследования
 на
 образования
 общественно�
@@ -170,11 +194,13 @@ you
 со
 со всеми други
 социалистическая
+социалистические
 текстом
 фото
 фото общественно�
 фото со
 фото со всеми други
 фото со всеми изображе
+экономика
 ’
 �
