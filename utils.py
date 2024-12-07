@@ -21,3 +21,28 @@ def print_footer():
 def get_device():
     device = torch.device("mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu")
     return device
+
+###########
+def filter_and_sort_allowed_list(allowed_file, ignore_file):
+    # Lies die Einträge aus der Ignore-Liste
+    with open(ignore_file, 'r') as file:
+        ignore_list = set(line.strip().lower() for line in file)
+
+    # Lies die Einträge aus der Allowed-Liste
+    with open(allowed_file, 'r') as file:
+        allowed_list = [line.strip().lower() for line in file]
+
+    # Filtere die Allowed-Liste, um Einträge zu entfernen, die in der Ignore-Liste vorkommen
+    filtered_allowed_list = [entry for entry in allowed_list if entry not in ignore_list]
+
+    # Sortiere die gefilterte Liste alphabetisch
+    sorted_filtered_allowed_list = sorted(filtered_allowed_list)
+
+    # Schreibe die sortierte und gefilterte Liste zurück in die Allowed-Liste Datei
+    with open(allowed_file, 'w') as file:
+        for entry in sorted_filtered_allowed_list:
+            file.write(entry + '\n')
+
+# Beispielaufruf der Funktion
+filter_and_sort_allowed_list('allowed_words.txt', 'ignore_liste.txt')
+###########
