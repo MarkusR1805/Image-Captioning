@@ -17,9 +17,11 @@ from tqdm import tqdm
 
 #ANCHOR - NLTK-Download
 # NLTK-Ressourcen herunterladen
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
+nltk.download('punkt_tab')
+#nltk.download('averaged_perceptron_tagger')
+nltk.download('averaged_perceptron_tagger_eng')
 nltk.download('words')  # Wortliste hinzufügen
+# nltk.download('punkt_tab')
 
 from nltk.corpus import words
 english_words_set = set(words.words())
@@ -142,10 +144,8 @@ additional_words = [word.strip().lower() for word in additional_words.split(',')
 gesamt_zeit = time.time()
 
 #ANCHOR - Modelpfad
-# Lokaler Modellpfad
-model_path ="/Volumes/SSD T7/Salesforce-blip2-opt-27b"
-# model_path = "Salesforce/blip2-opt-2.7b" # Huggingface path
-processor = Blip2Processor.from_pretrained(model_path)
+model_path = "Salesforce/blip2-opt-2.7b" # Huggingface path
+processor = Blip2Processor.from_pretrained(model_path, use_fast=True)
 model = Blip2ForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16).to(device)
 
 # Löschen vorhandener Textdateien im Verzeichnis
@@ -177,9 +177,9 @@ for filename in os.listdir(image_dir):
                                  top_k=50,
                                  top_p=0.85,
                                  no_repeat_ngram_size=3,
-                                 num_beams=2,
-                                 min_length=20,
-                                 max_length=80)
+                                 num_beams=5,
+                                 min_length=40,
+                                 max_length=150)
 
             caption = processor.decode(out[0], skip_special_tokens=True).strip()
             caption = ' '.join(caption.split())
