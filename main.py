@@ -98,6 +98,7 @@ def main():
 if __name__ == "__main__":
     main()
 
+#ANCHOR - Eingabeaufforderungen
 # Eingabeaufforderung für den Pfad zum Verzeichnis mit den Bildern
 standard_image_dir = "/Users/markusrossler/Desktop/Lora/Python"
 image_dir = input(f"Bitte geben Sie den Pfad zum Verzeichnis mit den Bildern [{standard_image_dir}]: ") or standard_image_dir
@@ -145,6 +146,7 @@ gesamt_zeit = time.time()
 
 #ANCHOR - Modelpfad
 model_path = "Salesforce/blip2-opt-2.7b" # Huggingface path
+# model_path = "Salesforce/blip2-opt-6.7b-coco" # Huggingface path
 processor = Blip2Processor.from_pretrained(model_path, use_fast=True)
 model = Blip2ForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16).to(device)
 
@@ -172,7 +174,7 @@ for filename in os.listdir(image_dir):
             # Generiere Bildbeschreibung
             out = model.generate(**inputs,
                                  do_sample=True,
-                                 temperature=1.0,
+                                 temperature=0.5,
                                  length_penalty=1.0,
                                  top_k=50,
                                  top_p=0.85,

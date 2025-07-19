@@ -1,11 +1,2 @@
-/bin
-/include
-/lib
-pyvenv.cfg
-nltk-analyse.py
-main-copy.py
-allowed_words-copy.txt
-ignore_liste-copy.txt
-keywords.txt
-.DS_Store
-__pycache__
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*
