@@ -9,7 +9,8 @@ import platform
 import psutil
 import subprocess
 import torch
-from transformers import Blip2Processor, Blip2ForConditionalGeneration
+# from transformers import Blip2Processor, Blip2ForConditionalGeneration
+from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
 import language_tool_python
 from utils import *
@@ -145,10 +146,11 @@ additional_words = [word.strip().lower() for word in additional_words.split(',')
 gesamt_zeit = time.time()
 
 #ANCHOR - Modelpfad
-model_path = "Salesforce/blip2-opt-2.7b" # Huggingface path
+# model_path = "Salesforce/blip2-opt-2.7b" # Huggingface path
+model_path = "Salesforce/blip-image-captioning-large" # Huggingface path
 # model_path = "Salesforce/blip2-opt-6.7b-coco" # Huggingface path
-processor = Blip2Processor.from_pretrained(model_path, use_fast=True)
-model = Blip2ForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16).to(device)
+processor = BlipProcessor.from_pretrained(model_path, use_fast=True)
+model = BlipForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16).to(device)
 
 # Löschen vorhandener Textdateien im Verzeichnis
 for filename in os.listdir(image_dir):
@@ -174,14 +176,14 @@ for filename in os.listdir(image_dir):
             # Generiere Bildbeschreibung
             out = model.generate(**inputs,
                                  do_sample=True,
-                                 temperature=0.5,
+                                 temperature=0.9,
                                  length_penalty=1.0,
                                  top_k=50,
-                                 top_p=0.85,
+                                 top_p=0.95,
                                  no_repeat_ngram_size=3,
                                  num_beams=5,
-                                 min_length=40,
-                                 max_length=150)
+                                 min_length=30,
+                                 max_length=80)
 
             caption = processor.decode(out[0], skip_special_tokens=True).strip()
             caption = ' '.join(caption.split())
