@@ -9,7 +9,6 @@ import platform
 import psutil
 import subprocess
 import torch
-# from transformers import Blip2Processor, Blip2ForConditionalGeneration
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
 import language_tool_python
@@ -19,10 +18,8 @@ from tqdm import tqdm
 #ANCHOR - NLTK-Download
 # NLTK-Ressourcen herunterladen
 nltk.download('punkt_tab')
-#nltk.download('averaged_perceptron_tagger')
 nltk.download('averaged_perceptron_tagger_eng')
 nltk.download('words')  # Wortliste hinzufügen
-# nltk.download('punkt_tab')
 
 from nltk.corpus import words
 english_words_set = set(words.words())
@@ -146,9 +143,7 @@ additional_words = [word.strip().lower() for word in additional_words.split(',')
 gesamt_zeit = time.time()
 
 #ANCHOR - Modelpfad
-# model_path = "Salesforce/blip2-opt-2.7b" # Huggingface path
 model_path = "Salesforce/blip-image-captioning-large" # Huggingface path
-# model_path = "Salesforce/blip2-opt-6.7b-coco" # Huggingface path
 processor = BlipProcessor.from_pretrained(model_path, use_fast=True)
 model = BlipForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16).to(device)
 
