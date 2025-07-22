@@ -144,7 +144,7 @@ gesamt_zeit = time.time()
 
 #ANCHOR - Modelpfad
 model_path = "Salesforce/blip-image-captioning-large" # Huggingface path
-processor = BlipProcessor.from_pretrained(model_path, use_fast=True)
+processor = BlipProcessor.from_pretrained(model_path, use_fast=False)
 model = BlipForConditionalGeneration.from_pretrained(model_path, torch_dtype=torch.float16).to(device)
 
 # Löschen vorhandener Textdateien im Verzeichnis
@@ -284,7 +284,7 @@ print(f"CSV-Datei mit Bildpfaden und Beschreibungen wurde erstellt in: {csv_pfad
 
 ##########################
 # Tokenizerfunktion: Token-IDs für extrahierte Wörter speichern
-with open(os.path.join(text_dir, 't_extracted_words.txt'), 'w', encoding='utf-8') as token_file:
+with open(os.path.join(text_dir, 'words_tokens.txt'), 'w', encoding='utf-8') as token_file:
     unique_words = set(all_extracted_words)  # Verwenden Sie ein Set, um Duplikate zu entfernen
     for word in unique_words:
         tokenized_input = processor.tokenizer(word, return_tensors="pt")  # Tokenisierung durchführen
@@ -294,7 +294,7 @@ with open(os.path.join(text_dir, 't_extracted_words.txt'), 'w', encoding='utf-8'
 print("Tokenizer-Werte wurden in 't_extracted_words.txt' gespeichert.")
 
 # Beispielaufruf für die Dateien
-remove_duplicates_and_sort(os.path.join(text_dir, 't_extracted_words.txt'))
+remove_duplicates_and_sort(os.path.join(text_dir, 'words_tokens.txt'))
 remove_duplicates_and_sort(os.path.join(text_dir, 'extracted_words.txt'))
 remove_duplicates_and_sort(os.path.join(text_dir, 'gesamt.txt'))
 
