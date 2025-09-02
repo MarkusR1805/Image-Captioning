@@ -105,6 +105,7 @@ clay
 close
 close-up
 clouds
+clowns
 colours
 coming
 computer
@@ -356,6 +357,7 @@ over
 overlooking
 paint
 pair
+paneled
 path
 patterns
 pc
@@ -463,6 +465,8 @@ stockfotoğrafi
 stockings
 stop
 streaks
+streetlamp
+streetlight
 style
 sunflowers
 surrounded
@@ -473,6 +477,7 @@ take
 taken
 tank
 tassels
+tattoos
 textured
 that
 the
@@ -486,6 +491,7 @@ thong
 thrones'her
 through
 thumb
+tia
 tied
 to
 tombstones
@@ -498,6 +504,7 @@ up
 very
 view
 wall
+wallpapered
 wallpapers
 walls
 waterfalls
